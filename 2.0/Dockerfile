@@ -25,6 +25,10 @@ RUN set -x \
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 
+RUN /usr/share/elasticsearch/bin/plugin install license
+RUN /usr/share/elasticsearch/bin/plugin install marvel-agent
+
+
 RUN set -ex \
 	&& for path in \
 		/usr/share/elasticsearch/data \
